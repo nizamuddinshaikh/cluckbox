@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cluckbox Dashboard</title>
+    <link rel="stylesheet" href="/static/CSS/dashboardJavascript.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>CluckBox</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                    <li><a href="{% url 'order' %}">Order</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1 class="header">🐔 Cluckbox Dashboard</h1>
+
+
+<section class="order-section">
+
+    <!-- Boneless Item -->
+    <div class="item-card">
+        <img src="/static/IMG/boneless1.jpg" alt="Boneless Chicken">
+        <h3>Boneless Chicken ₹400/1Kg</h3>
+        <form>
+        <label for="quantity-whole">Quantity:</label>
+        <input type="number" id="quantity" name="Bonless_Chicken" placeholder="Enter quantity" min="1">
+        <button class="btn" onclick="addData()">Add to Cart</button>
+        </form>
+    </div>
+
+    <!-- Breast with Ribs Item -->
+    <div class="item-card">
+        <img src="/static/IMG/RIBS.jpeg.jpg" alt="Breast with Ribs">
+        <h3>Breast with Ribs ₹450/1Kg</h3>
+        <form> 
+        <label for="quantity-breast">Quantity:</label>
+        <input type="number" id="quantity" name="Breast_Ribs" placeholder="Enter quantity" min="1">
+        <button class="btn" onclick="addData()">Add to Cart</button>
+        </form>
+    </div>
+
+    <!-- Breast Quarter Item -->
+    <div class="item-card">
+        <img src="/static/IMG/leg.webp" alt="Chicken legs">
+        <h3>Chicken Legs ₹350/1Kg</h3>
+        <form>
+        {% comment %} {% csrf_token %} {% endcomment %}
+        <label for="quantity-breast-quarter">Quantity:</label>
+        <input type="number" id="quantity" name="Chicken_legs" placeholder="Enter quantity" min="1">
+        <button class="btn" onclick="addData()">Add to Cart</button>
+        </form>
+    </div>
+
+    <!-- Leg Quarter Item -->
+    <div class="item-card">
+        <img src="/static/IMG/LEG QUARTER.jpeg.jpg" alt="Leg Quarter">
+        <h3>Leg Quarter <br>₹250/1kg</br></h3>
+        <form>
+        <label for="quantity-leg">Quantity:</label>
+        <input type="number" id="quantity" name="Leg_Quarter" placeholder="Enter quantity" min="1">
+        <button class="btn" onclick="addData()">Add to Cart</button>
+        </form>
+    </div>
+
+    <!-- Whole Leg Item -->
+    <div class="item-card">
+        <img src="/static/IMG/Body.jpg" alt="Whole Leg">
+        <h3>Whole Leg <br>₹550/1Kg</br></h3>
+        <form>
+        <label for="quantity-leg">Quantity:</label>
+        <input type="number" id="quantity" name="Whole_Legs" placeholder="Enter quantity" min="1">
+        <button class="btn" onclick="addData()">Add to Cart</button>
+        </form>
+    </div>
+
+        <!-- Eggs item -->
+    <div class="item-card">
+        <img src="/static/IMG/eggs.jpg" alt="Whole Leg">
+        <h3>Eggs<br> ₹60/1Dozon</h3>
+        <form>
+        {% comment %} {% csrf_token %} {% endcomment %}
+        <label for="quantity-egg">Quantity:</label>
+        <input type="number" id="quantity" name="Eggs" placeholder="Enter quantity" min="1">
+        <button class="btn" onclick="addData()">Add to Cart</button>
+        </form>
+    </div>
+
+       <!--Drumstick item-->
+    <div class="item-card">
+        <img src="/static/IMG/chicken.jpg" alt="Drumstick">
+        <h3>Drumstick <br>₹360/1Kg</br></h3>
+        <form>
+        {% comment %} {% csrf_token %} {% endcomment %}
+        <label for="quantity-Drumstick">Quantity:</label>
+        <input type="number" id="quantity" name="Drumstick" placeholder="Enter quantity" min="1">
+        <button class="btn" onclick="addData()">Add to Cart</button>
+        </form>
+    </div>
+
+       <!--Keema-->
+    <div class="item-card">
+        <img src="/static/IMG/Keema.webp" alt="--wings--">
+        <h3>Keema<br> ₹160/1Kg</h3>
+        <form>
+        {% comment %} {% csrf_token %} {% endcomment %}
+        <label for="quantity-Wings">Quantity:</label>
+        <input type="number" id="quantity" name="Keema" placeholder="Enter quantity" min="1">
+        <button class="btn" onclick="addData()">Add to Cart</button>
+        </form>
+    </div>
+
+        <!--Chicken Lollipop-->
+    <div class="item-card">
+        <img src="/static/IMG/Chicken-Lolipop.jpg" alt="Lollipop--">
+        <h3>Chicken Lollipop ₹210/1Kg</h3>
+        <form>
+        {% comment %} {% csrf_token %} {% endcomment %}
+        <label for="quantity-Lollipop">Quantity:</label>
+        <input type="number" id="quantity" name="Lolipop" placeholder="Enter quantity" min="1">
+        <button class="btn" onclick="addData()">Add to Cart</button>
+        </form>
+    </div>
+    
+       <!--wings-->
+    <div class="item-card">
+        <img src="/static/IMG/wings.jpeg.jpg" alt="--wings--">
+        <h3 class="producName">Wings</h3>
+        <h3 class="price">₹160/1Kg</h3>
+        <form>
+        {% comment %} {% csrf_token %} {% endcomment %}
+        <label for="quantity-Wings">Quantity:</label>
+        <input type="number" class="quantity" name="Wings" placeholder="Enter quantity" min="1">
+        <button class="btn" onclick="addData()">Add to Cart</button>
+        </form>
+    </div>
+
+</section>
+
+<section class="order-summary">
+
+    <table id="dataTable" border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabledata">
+            <form action="" method="post">
+
+            </form>  
+        </tbody>
+
+    </table>
+    
+    <div class="payment-section">
+        <!-- <h3>Total Amount: ₹<span id="totalAmount">{{ cart_total }}</span></h3> -->
+        <button class="btn" name="clear" onclick="clearData()" type="submit">Cash-on-Delivery</button>
+        <button class="btn" name="clear" onclick="clearData()" type="submit">Proceed to Payment</button>
+    </div>
+ 
+
+</section>
+
+<script>
+        
+        // Store cart items in an array
+        let cartItems = [];
+
+        // Product prices mapping
+        const prices = {
+            'Bonless_Chicken': 400,
+            'Breast_Ribs': 450,
+            'Chicken_legs': 350,
+            'Leg_Quarter': 250,
+            'Whole_Legs': 550,
+            'Eggs': 60,
+            'Drumstick': 360,
+            'Keema': 160,
+            'Lolipop': 210,
+            'Wings': 160
+        };
+
+        // Function to add items to cart
+        function addData(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get the parent form element
+            const form = event.target.closest('form');
+            const productInput = form.querySelector('input[type="number"]');
+            const productName = productInput.name;
+            const quantity = parseInt(productInput.value);
+            
+            if (quantity > 0) {
+                const price = prices[productName];
+                const total = price * quantity;
+                
+                // Add to cart items array
+                cartItems.push({
+                    product: productName.replace('_', ' '),
+                    quantity: quantity,
+                    price: price,
+                    total: total
+                });
+                
+                // Update table
+                updateTable();
+                
+                // Reset input
+                productInput.value = '';
+            }
+        }
+
+        // Function to update table
+        function updateTable() {
+            const tableBody = document.getElementById('tabledata');
+            let tableContent = '';
+            let grandTotal = 0;
+            
+            cartItems.forEach((item, index) => {
+                grandTotal += item.total;
+                tableContent += `
+                    <tr>
+                        <td name="product">${item.product}</td>
+                        <td name="quantity">${item.quantity}</td>
+                        <td name="price">₹${item.price}</td>
+                        <td name="total">₹${item.total}</td>
+                        <td>
+                            <button onclick="removeItem(${index})" class="btn">Remove</button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            // Add grand total row
+            if (cartItems.length > 0) {
+                tableContent += `
+                    <tr>
+                        <td colspan="3"><strong>Grand Total</strong></td>
+                        <td colspan="2"><strong>₹${grandTotal}</strong></td>
+                    </tr>
+                `;
+            }
+            
+            tableBody.innerHTML = tableContent;
+        }
+
+        // Function to remove item from cart
+        function removeItem(index) {
+            cartItems.splice(index, 1);
+            updateTable();
+        }
+
+        // Function to clear cart
+        function clearData() {
+            cartItems = [];
+            updateTable();
+        }
+
+        // Add event listeners to all Add to Cart buttons
+        document.querySelectorAll('.item-card form').forEach(form => {
+            form.addEventListener('submit', addData);
+        });
+   
+    </script>    
+</body>
+</html>
+

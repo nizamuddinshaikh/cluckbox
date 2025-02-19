@@ -1,0 +1,117 @@
+<!Doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/CSS/akdashboard.css">
+        <title>DashBoard</title>
+        <script type="text/javascript" src="/static/JS/akdash.js"></script>
+    </head>
+    <body>
+        <h1>Cluckbox Dashboard</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Rate</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr> 
+                </thead>
+                <tbody>
+                    <tr class="rows">
+                        <td>
+                            <img src="/static/IMG/Chicken-Lolipop.jpg" alt="Lolipop" onclick="toggleSelection(this)">
+                            <div class="item-name">Chicken Lollipop</div>
+                        </td>
+                        <td class="rate">200</td>
+                        <td><input type="number" placeholder="Enter Lolipop quantity" name="Lolipop" oninput="calculateTotal(this.closest('tr'))"></td>
+                        <td class="row-total">0.00</td>
+                    </tr>
+                    <tr class="rows">
+                        <td>
+                            <img src="/static/IMG/fullleg.webp" alt="Leg Piece" onclick="toggleSelection(this)">
+                            <div class="item-name">Leg Piece</div>
+                        </td>
+                        <td class="rate">300</td>
+                        <td><input type="number" placeholder="Enter Leg Piece quantity" name="Leg_Piece" oninput="calculateTotal(this.closest('tr'))"></td>
+                        <td class="row-total">0.00</td>
+                    </tr>
+                    <tr class="rows">
+                        <td>
+                            <img src="/static/IMG/breastboneless.webp" alt="Boneless" onclick="toggleSelection(this)">
+                            <div class="item-name">BreastBoneless</div>
+                        </td>
+                        <td class="rate">350</td>
+                        <td><input type="number" placeholder="Enter Boneless quantity" name="Boneless" oninput="calculateTotal(this.closest('tr'))"></td>
+                        <td class="row-total">0.00</td>
+                    </tr>
+                    <tr class="rows">
+                        <td>
+                            <img src="/static/IMG/Drumsticks.webp" alt="Drumsticks" onclick="toggleSelection(this)">
+                            <div class="item-name">Drumsticks</div>
+                        </td>
+                        <td class="rate">250</td>
+                        <td><input type="number" placeholder="Enter Drumsticks quantity" name="Eggs" oninput="calculateTotal(this.closest('tr'))"></td>
+                        <td class="row-total">0.00</td>
+                    </tr>
+                    <tr class="rows">
+                        <td>
+                            <img src="/static/IMG/wings.webp" alt="wings" onclick="toggleSelection(this)">
+                            <div class="item-name">Wings</div>
+                        </td>
+                        <td class="rate">250</td>
+                        <td><input type="number" placeholder="Enter Wings quantity" name="wings" oninput="calculateTotal(this.closest('tr'))"></td>
+                        <td class="row-total">0.00</td>
+                    </tr>
+                    <tr class="rows">
+                        <td>
+                            <img src="/static/IMG/withskin.webp" alt="withskin" onclick="toggleSelection(this)">
+                            <div class="item-name">Withskin</div>
+                        </td>
+                        <td class="rate">220</td>
+                        <td><input type="number" placeholder="Enter Withskin quantity" name="withskin" oninput="calculateTotal(this.closest('tr'))"></td>
+                        <td class="row-total">0.00</td>
+                    </tr>
+                    <tr class="rows">
+                        <td>
+                            <img src="/static/IMG/WithoutSkin.webp" alt="withoutskin" onclick="toggleSelection(this)">
+                            <div class="item-name">WithoutSkin</div>
+                        </td>
+                        <td class="rate">190</td>
+                        <td><input type="number" placeholder="Enter WithoutSkin quantity" name="withoutskin" oninput="calculateTotal(this.closest('tr'))"></td>
+                        <td class="row-total">0.00</td>
+                    </tr>
+                    <tr class="rows">
+                        <td>
+                            <img src="/static/IMG/Keema.webp" alt="keema" onclick="toggleSelection(this)">
+                            <div class="item-name">Keema</div>
+                        </td>
+                        <td class="rate">350</td>
+                        <td><input type="number" placeholder="Enter Keema quantity" name="keema" oninput="calculateTotal(this.closest('tr'))"></td>
+                        <td class="row-total">0.00</td>
+                    </tr>
+                    <tr class="rows">
+                        <td>
+                            <img src="/static/IMG/legboneless.webp" alt="legboneless" onclick="toggleSelection(this)">
+                            <div class="item-name">Legboneless</div>
+                        </td>
+                        <td class="rate">380</td>
+                        <td><input type="number" placeholder="Enter Legboneless quantity" name="legboneless" oninput="calculateTotal(this.closest('tr'))"></td>
+                        <td class="row-total">0.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="total">Grand Total</td>
+                        <td id="grand-total" class="total">0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="but">
+                <button class="submit-button">Order Placed</button>
+            </div>
+        </form>
+       
+    </body>
+    </html>

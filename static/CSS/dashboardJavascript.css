@@ -1,0 +1,228 @@
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* Header and Navbar Styling */
+header {
+    /* background-color: #a9b27d; */
+    padding: 40px 0;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    /* background: linear-gradient(135deg, #a9b27d, #8b9a4a); */
+}
+
+.navbar {
+    background-color: #1a1a21;
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    z-index: 10;
+}
+
+.navbar .logo h1 {
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 4px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
+    transform: translateY(-4px); /* Slight raise on hover */
+    letter-spacing: 1px; /* Expands text on hover */
+}
+
+/* Header Styling */
+.header {
+    background: linear-gradient(135deg, #379a72, #526d6c);
+    color: rgb(255, 255, 255);
+    padding: 10px 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Reduced box-shadow for smaller header */
+    border-radius: 5px; /* Reduced border radius */
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3em; /* Larger font for 4K */
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 50px;
+    /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); */
+    border-radius: 15px;
+}
+
+/* Order Section Styling */
+.order-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 20px;
+}
+
+.item-card {
+    width: 18%; /* Adjusted to fit 5 items per row */
+    padding: 30px;
+    border: 2px solid #ddd;
+    border-radius: 18px;
+    text-align: center;
+    background: linear-gradient(135deg, #f0f0f0, #d9d9d9);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.item-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.item-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.item-card label {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Ensuring input field and button are on the same line */
+.item-card input {
+    width: 60%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.item-card button {
+    padding: 14px 25px;
+    background: linear-gradient(135deg, #ff9800, #e65100);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 1.1em;
+    transition: background 0.3s ease;
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.item-card button:hover {
+    background: linear-gradient(135deg, #e65100, #ff9800);
+}
+
+/* Order Summary Section */
+.order-summary {
+    padding: 30px;
+    background-color: #fff;
+    margin-top: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-summary table th,
+.order-summary table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1em;
+}
+
+.order-summary table th {
+    background: linear-gradient(90deg, #ff9800, #e65100);
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Payment Section */
+.payment-section {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.payment-section button {
+    padding: 14px 25px;
+    background: linear-gradient(90deg, #4CAF50, #388E3C);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.2em;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.payment-section button:hover {
+    background: linear-gradient(90deg, #388E3C, #2c6e29);
+    transform: translateY(-3px);
+}
